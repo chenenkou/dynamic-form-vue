@@ -33,14 +33,6 @@
                     on: {
                         change: value => {
                             this.elFormOptions.model[field] = value
-                            if (changeMethod) {
-                                changeMethod.bind(this)({
-                                    value,
-                                    model: this.elFormOptions.model,
-                                    field,
-                                    rules: this.rules
-                                })
-                            }
                         }
                     }
                 })
