@@ -19,16 +19,26 @@
                     </div>
                 </el-col>
             </el-row>
+
+            <el-row>
+                <el-col :span="8" :offset="8">
+                  <a-component v-model="form.name" @abc="(a) => {console.log(a)}"></a-component>
+                </el-col>
+            </el-row>
         </el-main>
     </el-container>
 
 </template>
 
 <script>
+    import AComponent from "@/components/AComponent";
     export default {
         name: 'HelloWorld',
         props: {
             msg: String
+        },
+        components: {
+            AComponent
         },
         data() {
             return {
@@ -90,7 +100,7 @@
                     }
                 },
                 form: {
-                    name: '',
+                    name: '名称',
                     region: '',
                     date: '',
                     delivery: false,
